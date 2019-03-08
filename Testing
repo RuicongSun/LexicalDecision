@@ -1,0 +1,14 @@
+PennController.ResetPrefix(null);
+PennController(
+    newText("test sentence", "A is colder than B, though A is not cold yet.")
+        .print()
+    ,
+    newKey("answer", "FJ")
+    ,
+    newText("instruction", "Press F if this is a coherent statement, press J otherwise.")
+        .print()
+    ,
+    // We refer back to the 'answer' key element and wait only now
+    getKey("answer")
+        .wait()
+);
